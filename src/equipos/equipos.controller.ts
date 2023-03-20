@@ -9,6 +9,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { EquiposService } from './equipos.service';
+import { CreateEquipoDto } from './dto/create-equipo.dto';
 
 @Controller('equipos')
 export class EquiposController {
@@ -26,8 +27,8 @@ export class EquiposController {
   }
 
   @Post()
-  createEquipo(@Body() body: any) {
-    return body;
+  createEquipo(@Body() createEquipoDto: CreateEquipoDto) {
+    return createEquipoDto;
   }
 
   @Patch(':id')
